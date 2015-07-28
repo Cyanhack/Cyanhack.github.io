@@ -1,59 +1,83 @@
-<!--DWD CLASS WEEK 1
-	JS/HTML/CSS TUTORIALS
-	6/30/2015
-	CYANHACK/MILBY,SHAUN
--->
-
+<!DOCTYPE html>
 <html>
-	<head>
-	</head>
+    <head>
+        <script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
 
-	<body style="background-color:black">
-		<div style="color:blue; font-size:50pt;
-		 background-color:red; width:240px; float:left">
-			Home
-		</div>
-		
-		 <img width="200px" src="http://i.imgur.com/ADxXnOo.jpg?1"></img>
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
 
-		<div style="color:blue; font-size:50pt;
-		 background-color:red; width:240px; float:left">
-			Careers
-		</div>
+<body onload="startTime()">
 
-		<div style="color:blue; font-size:50pt;
-		 background-color:red; width:240px; float:left">
-			Forum
-		</div>
-<!--you can use different names, it doesn't matter as long as it's easy to remember, legible-->
-		<div onmouseover="MakeBold()" onmouseout="MakeLight()" 
-		id="aboutUsDiv" style="color:blue; font-size:50pt;
-		 background-color:red; width:240px; float:left">
-			<a href="./AboutUs.html">About Us</a>
-		</div>
+<div id="txt"></div>
+      <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+  <script>
+  $(function() {
+    $( "#draggable" ).draggable();
+  });
+  </script>
+    <style>
+html {
+	height: 100%;
+}
+body {
+ 	height:100%;
+	background-image: url("images/miyabkgd.png");
+	background-color: #0080bc;
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	font-family: 'Poiret One', cursive;
+	font-size: 22px;
+}
+.container {
+	height:100%;
+}
+.nav {
+	position: relative;
+	top:calc(50% + 40px);
+	transform: translateY(-50%);
+}
+a {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 19px;
+}
+</style>
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    </head>
 
-		<script type="text/javascript">
-
-		
-		
-		mydiv = document.getElementById("aboutUsDiv")
-		mydiv.style.fontWeight = "900";
-		mydiv.innerHTML = "<a href='./AboutUs.html'>About Us</a>"
-
-		function MakeBold(){
-            mydiv = document.getElementById('aboutUsDiv')
-            mydiv.style.fontWeight = "900";
-        }
+    <body>
         
-        function MakeLight(){
-            mydiv = document.getElementById('aboutUsDiv')
-            mydiv.style.fontWeight = "100";
-        }
-
-
-		</script>
-
-
-
-	</body>
+        <div id="draggable" class="ui-widget-content">
+  <p>WELCOME TO THE MIYAZAKI WEBPAGE!!! xD :) <(O_0)< </p>
+</div>
+    <div class="container">
+      <p align="center"> WHERE IMAGINATION IS <b>FOREVER.</b> ©</p>
+      <br/>
+      <p align="center" class="nav"> <a href="index.html">HOME</a> | <a href="about.html">ABOUT</a> | <a href="miyazakigallery.html">GALLERY</a> | <a href="contact.html">CONTACT</a> 
+    </div>
+</body>
 </html>
